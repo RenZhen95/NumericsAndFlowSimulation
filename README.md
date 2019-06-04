@@ -1,4 +1,4 @@
-# NumericsAndFlowSimulation
+# Numerics and Flow Simulation
 Author: Jonathan Liaw
 
 Email: j-liaw@hotmail.com
@@ -10,13 +10,11 @@ by Prof. Dr. Andreas Kempf of the University Duisburg-Essen
 # Examples
 #### USCDS
 <tr>
-  <td>
-    <img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagonalJet0.png" alt="DiagFlow0" width="200" height="200">
-  </td>
-  
-  <td>
-    <img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagonalJet1.png" alt="DiagFlow1" width="200" height="200">
-  </td>  
+  <td><img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagonalJet0.png" alt="DiagFlow0" width="200" height="200"></td>
+  <td><img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagonalJet1.png" alt="DiagFlow1" width="200" height="200"></td>  
 </tr>
-https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagonalJet0.png
-<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+
+<tr>
+  <td><img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagonalJet2.png" alt="DiagFlow2" width="200" height="200"></td>
+  <td><img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagonalJet3.png" alt="DiagFlow3" width="200" height="200"></td>  
+</tr>

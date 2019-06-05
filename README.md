@@ -1,13 +1,9 @@
 # Numerics and Flow Simulation
-Author: Jonathan Liaw
+## Description
+Basic 2D flow solver using Matlab developed as an assignment from the course Numerics and Flow Simulation offered by Prof. Dr. Andreas Kempf of the University Duisburg-Essen\
+Link: https://www.uni-due.de/ivg/fluiddynamik/en/index_en.php
 
-Email: j-liaw@hotmail.com
-
-# Description
-Basic 2D flow solver using Matlab developed as an assignment from the course Numerics and Flow Simulation offered\
-by Prof. Dr. Andreas Kempf of the University Duisburg-Essen
-
-# Examples
+## Examples
 #### USCDS (Upwind Shifted Central Differencing Scheme)
 <img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagonalJet0.png" alt="DiagFlow0" width="300" height="300"><img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagonalJet1.png" alt="DiagFlow1" width="300" height="300">
 

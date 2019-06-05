@@ -1,7 +1,7 @@
 # Numerics and Flow Simulation
 ## Description
-Basic 2D flow solver using Matlab developed as an assignment from the course Numerics and Flow Simulation offered\
-by Prof. Dr. Andreas Kempf of the University Duisburg-Essen
+Basic 2D flow solver using Matlab developed as an assignment from the course Numerics and Flow Simulation offered by Prof. Dr. Andreas Kempf of the University Duisburg-Essen\
+Link: https://www.uni-due.de/ivg/fluiddynamik/en/index_en.php
 
 ## Examples
 #### USCDS (Upwind Shifted Central Differencing Scheme)

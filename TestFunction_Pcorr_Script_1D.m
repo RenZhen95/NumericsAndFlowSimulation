@@ -24,7 +24,7 @@ Ilap = Ila + 1; % Index ghost cell right of x
 
 % Initialise the momentum field with a periodic sine function (1 cycle)
 phi_grid = linspace(0, 2*pi, Ima+2*nG);
-rhou = sin(phi_grid);
+rhou = cos(phi_grid);
 
 % Parameters 
 CFL = 0.1; % Define a constant
@@ -75,6 +75,6 @@ for n = 1:250
     plot(phi_grid, divPred_x, 'r-')
 
     subplot(1,2,2)
-    plot(phi_grid, rhou)
+    plot(phi_grid, rhou, 'r-')
     drawnow
 end

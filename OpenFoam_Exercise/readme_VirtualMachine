@@ -1,0 +1,93 @@
+======================================================================
+## Virtual Machine (Ubuntu)
+======================================================================
+Username: student
+Password: fdhsbo
+Remember to enable Virtualization in BIOS
+======================================================================
+## Crashcourse to Unix
+======================================================================
+pwd - Outputs current directory
+cd - Moves back into home directory
+cd .. - Just like in windows
+ll - Long List
+-> r (Read)
+-> w (Write)
+-> x (Executable)
+cat proc/cpuinfo
+less
+-> (Command to look into files, this is the Linux version of the Unix "more")
+tail
+-> To look at the end of the folder
+head
+-> To look at the beginning fo the folder
+man(command)
+-> Opens the manual of the given command
+man printf
+-> Open manual
+grep(string)
+-> Look for a particular file with the given string
+
+Example:
+grep sudo blabla | less
+
+Redirection:
+grep sudo blabla > bla2.txt
+-> Output sudo blabla is redirected into bla2.txt
+-> cat bla2.txt (to check your output)
+grep sudo blabla >> bla2.txt
+-> Appends to file
+
+touch (file)
+-> Gives the given file the current date
+
+cat /dev/null > empty.file
+-> Create empty.file
+
+ps - Provides running current processes
+kill (PID) - Kills the shell running this process
+-> -9 in front for the absolutely kill it
+
+In Unix, there is no direct hardware access. Reason why there are no games on Unix, especially where games need
+to access more computer power. Also the reason why viruses do not exist on Linux
+
+ll > testfile
+vi testfile
+-> To create a testfile
+-> Note: Never create an executable called test as there is already a built in one
+
+To open the editor
+emacs -nw testfile
+
+OpenFoam Shortcut
+foam - Sends you to top level directory
+tut - Sends you to Tutorials
+run - Sends you to run
+rm -r 4.9?
+	-> Removes all files recursively that have 4.9x
+rm -r 4*
+	-> Removes all files with 4
+cp -r /opt/openfoam6/tutorials/incompressible/icoFoam/cavity/cavity/* .
+	-> Copies everything in the input directory in the target
+	-> . Means the active directory (where you are right now)
+
+Here p is some given file
+chmod o+w p
+	-> Grant access to others (o) to write
+chmod o-w p
+	-> Removes permission for others to write
+o (Others)
+g (Group)
+a (Administrator)
+
+mv p pp
+	-> Renames p to pp
+
+paraFoam 
+	-> Opens the GUI and displays the computational mesh
+icoFoam
+	-> To run the simulation
+icoFoam 1>log 2>err &
+	-> Runs the program and "&" allows it to run in the background
+paraFoam
+	-> Runs post processing tool

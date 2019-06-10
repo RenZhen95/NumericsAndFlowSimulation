@@ -20,5 +20,22 @@ Link: https://www.uni-due.de/ivg/fluiddynamik/en/index_en.php
  
 <img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagJet_USCDS1.png" alt="DiagFlow0" width="300" height="300"><img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagJet_USCDS2.png" alt="DiagFlow1" width="300" height="300">
 
-
 <img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagJet_USCDS3.png" alt="DiagFlow2" width="300" height="300"><img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagJet_USCDS4.png" alt="DiagFlow3" width="300" height="300">
+
+
+### UDS (Upwind Discretisation Scheme)
+ - The UDS Scheme uses the upstream value
+ - The UDS Scheme is only first order accurate, very dissipative but very stable
+
+<img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagJet_UDS1.png" alt="DiagFlow0" width="300" height="300"><img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagJet_UDS2.png" alt="DiagFlow1" width="300" height="300">
+
+<img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagJet_UDS3.png" alt="DiagFlow0" width="300" height="300"><img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagJet_UDS4.png" alt="DiagFlow1" width="300" height="300">
+
+
+### TVD-Smart (Total Variation Diminuishing, SMART Scheme)
+ - TVD Schemes blend CDS and UDS to remain accurate and avoid wiggles
+ - Example here, uses the SMART Scheme
+
+<img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagJet_TVD_Smart1.png" alt="DiagFlow0" width="300" height="300"><img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagJet_TVD_Smart2.png" alt="DiagFlow1" width="300" height="300">
+
+<img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagJet_TVD_Smart3.png" alt="DiagFlow0" width="300" height="300"><img src="https://github.com/RenZhen95/NumericsAndFlowSimulation/blob/master/Images/DiagJet_TVD_Smart4.png" alt="DiagFlow1" width="300" height="300">

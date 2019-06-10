@@ -13,7 +13,7 @@ Jet_Radius = 4;
 
 nG = 1;             % The number of ghost cells
 Delta = 1;          % The length/width of the cells
-D = 1e-5;           % Diffusion coefficient
+D = 0;              % Diffusion coefficient (USCDS cannot consider diffusive fluxes)
 kinVis = 14.88e-6;  % Kinematic Viscosity of air
 
 % Obtaining the center of N and specifying a given distance from the center (radius)

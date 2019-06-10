@@ -1,4 +1,4 @@
-function [FcX, FcY] = calcFluxConTVD(u, v, phi_XY, deltaX)
+function [FcX, FcY] = calcFluxConTVD_SMART(u, v, phi_XY, deltaX)
     % Author: 			Liaw Jin Cheng
     % Email: 			jin.liaw@stud.uni-due.de
     % Matriculation: 	3025341
@@ -18,24 +18,29 @@ function [FcX, FcY] = calcFluxConTVD(u, v, phi_XY, deltaX)
     FcX = zeros(Jma, Ima-1);
 
     %%%%%!!!!!----------Calculating flux terms in x and y direction----------!!!!!%%%%%
-    %% Using TVD MINMOD Scheme %%
+    %% Using TVD SMART Scheme %%
     % Assume the scalar field phi_XY already contains the density rho
-
     %% Calculating the convective fluxes in the y direction %%
-    r_y = zeros(Jma-1,Ima);
-    B_y = zeros(Jma-1,Ima);
+    r_y = zeros(Jma-2,Ima);
+    B_y = zeros(Jma-2,Ima);
     r_y(1:Jma-2,:) = (phi_XY(3:Jma,:) - phi_XY(2:Jma-1,:)) ./ (phi_XY(2:Jma-1,:) - phi_XY(1:Jma-2,:));
-    B_y(:,:) = max(0, min(r_y, 1)); 
+
+    min_y = min(2.*r_y(1:Jma-2,:), 0.75.*r_y(1:Jma-2,:)+0.25);
+    B_y(1:Jma-2,:) = max(0, min(min_y, 4)); 
     % The convection flux term in the y direction
-    FcY(1:Jma-1,:) = deltaX^2 * v(1:Jma-1,:) .* ... 
-                     (phi_XY(2:Jma,:) + 0.5 .* B_y(1:Jma-1,:) .* (phi_XY(2:Jma,:) - phi_XY(1:Jma-1,:)));
+    FcY(2:Jma-1,:) = deltaX^2 .* v(2:Jma-1,:) .* ... 
+                     (phi_XY(2:Jma-1,:) + 0.5.*B_y(1:Jma-2,:).*(phi_XY(2:Jma-1,:) - phi_XY(1:Jma-2,:)));
+    FcY(1,:) = FcY(2,:);
 
     %% Calculating the convective fluxes in the x direction %%
-    r_x = zeros(Jma,Ima-1);
-    B_x = zeros(Jma,Ima-1);
+    r_x = zeros(Jma,Ima-2);
+    B_x = zeros(Jma,Ima-2);
     r_x(:,1:Ima-2) = (phi_XY(:,3:Ima) - phi_XY(:,2:Ima-1)) ./ (phi_XY(:,2:Ima-1) - phi_XY(:,1:Ima-2));
-    B_x(:,:) = max(0, min(r_x, 1)); 
+
+    min_x = min(2.*r_x(:,1:Ima-2), 0.75.*r_x(:,1:Ima-2)+0.25);
+    B_x(:,1:Ima-2) = 0;%max(0, min(min_x, 4)); 
     % The convection flux term in the x direction
-    FcX(:,1:Ima-1) = deltaX^2 * u(:,1:Ima-1) .* ... 
-                     (phi_XY(:,2:Ima) + 0.5 .* B_x(:,1:Ima-1) .* (phi_XY(:,2:Ima) - phi_XY(:,1:Ima-1)));
+    FcX(:,2:Ima-1) = deltaX^2 .* u(:,2:Ima-1) .* ... 
+                     (phi_XY(:,2:Ima-1) + 0.5.*B_x(:,1:Ima-2).*(phi_XY(:,2:Ima-1) - phi_XY(:,1:Ima-2)));
+    FcX(:,1) = FcX(:,2);
 end

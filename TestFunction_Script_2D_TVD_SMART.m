@@ -79,11 +79,11 @@ for n = 1:250
     [velu, velv] = mom2vel(rhou,rhov);
 
     % Calculating the convective fluxes for rhou
-    [FluxConX_rhou, FluxConY_rhou] = calcFluxConUSCDS(velu, velv, rhou, Delta, DeltaT);
+    [FluxConX_rhou, FluxConY_rhou] = calcFluxConTVD_SMART(velu, velv, rhou, Delta);
     % Calculating the convective fluxes for rhov
-    [FluxConX_rhov, FluxConY_rhov] = calcFluxConUSCDS(velu, velv, rhov, Delta, DeltaT);
+    [FluxConX_rhov, FluxConY_rhov] = calcFluxConTVD_SMART(velu, velv, rhov, Delta);
     % Calculating the convective fluxes for phi
-    [FluxConX_phi, FluxConY_phi] = calcFluxConUSCDS(velu, velv, phi, Delta, DeltaT);
+    [FluxConX_phi, FluxConY_phi] = calcFluxConTVD_SMART(velu, velv, phi, Delta);
 
     % Calculating the diffusive fluxes for rhou
     [FluxDifX_rhou, FluxDifY_rhou] = calcFluxDif(rhou, Delta, D);
@@ -139,12 +139,12 @@ for n = 1:250
     drawnow
 
     if n == 25
-        saveas(fig, "Images\DiagJet_USCDS1.png")
+        saveas(fig, "Images\DiagJet_TVD_Smart1.png")
     elseif n == 75
-        saveas(fig, "Images\DiagJet_USCDS2.png")
+        saveas(fig, "Images\DiagJet_TVD_Smart2.png")
     elseif n == 150
-        saveas(fig, "Images\DiagJet_USCDS3.png")
+        saveas(fig, "Images\DiagJet_TVD_Smart3.png")
     elseif n == 200
-        saveas(fig, "Images\DiagJet_USCDS4.png")
+        saveas(fig, "Images\DiagJet_TVD_Smart4.png")
     end
 end

@@ -1,4 +1,4 @@
-function [FcX, FcY] = calcFluxConCDS(u, v, phi_XY, deltaX)
+function [FcX, FcY] = calcFluxConUDS(u, v, phi_XY, deltaX)
     % Author: 			Liaw Jin Cheng
     % Email: 			jin.liaw@stud.uni-due.de
     % Matriculation: 	3025341
@@ -18,12 +18,12 @@ function [FcX, FcY] = calcFluxConCDS(u, v, phi_XY, deltaX)
     FcX = zeros(Jma, Ima-1);
 
     %%%%%!!!!!----------Calculating flux terms in x and y direction----------!!!!!%%%%%
-    %% Using Central Differencing %%
+    %% Using Upwind Discretisation Scheme %%
     % Assume the scalar field phi_XY already contains the density rho
 
     %% Calculating the convective fluxes in the y direction %%
-    FcY(1:Jma-1,:) = 0.5 * deltaX^2 * v(1:Jma-1,:) .* (phi_XY(1:Jma-1,:) + phi_XY(2:Jma,:));
+    FcY(1:Jma-1,:) = deltaX^2 * v(1:Jma-1,:) .* phi_XY(1:Jma-1,:);
 
     %% Calculating the convective fluxes in the x direction %%
-    FcX(:,1:Ima-1) = 0.5 * deltaX^2 * u(:,1:Ima-1) .* (phi_XY(:,1:Ima-1) + phi_XY(:,2:Ima));
+    FcX(:,1:Ima-1) = deltaX^2 * u(:,1:Ima-1) .* phi_XY(:,1:Ima-1);
 end

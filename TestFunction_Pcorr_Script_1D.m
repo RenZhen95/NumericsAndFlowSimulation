@@ -38,7 +38,7 @@ P = zeros(1, N + 2*nG);
 %%%%%!!!!!---------------------------------------!!!!!%%%%%
 %% Solving the 1D Momentum Transfer
 %%%%%!!!!!---------------------------------------!!!!!%%%%%
-for n = 1:250
+for n = 1:1
     % Calculating the divergence of the momentum prediction
     rhouP = rhou;
     divPred_x = divMom1D(rhouP, Delta);

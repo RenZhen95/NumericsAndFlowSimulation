@@ -138,13 +138,13 @@ for n = 1:250
     colormap(fig, hot)
     drawnow
 
-    if n == 25
-        saveas(fig, "Images\DiagJet_CDS1.png")
-    elseif n == 75
-        saveas(fig, "Images\DiagJet_CDS2.png")
-    elseif n == 150
-        saveas(fig, "Images\DiagJet_CDS3.png")
-    elseif n == 200
-        saveas(fig, "Images\DiagJet_CDS4.png")
-    end
+    % if n == 25
+    %     saveas(fig, "Images\DiagJet_CDS1.png")
+    % elseif n == 75
+    %     saveas(fig, "Images\DiagJet_CDS2.png")
+    % elseif n == 150
+    %     saveas(fig, "Images\DiagJet_CDS3.png")
+    % elseif n == 200
+    %     saveas(fig, "Images\DiagJet_CDS4.png")
+    % end
 end

@@ -35,14 +35,14 @@ D = 0; % Diffusion Coefficient
 % Initialise the pressure field
 P = zeros(1, N + 2*nG);
 
+% Calculating the divergence of the momentum prediction
+rhouP = rhou;
+divPred_x = divMom1D(rhouP, Delta);
+
 %%%%%!!!!!---------------------------------------!!!!!%%%%%
 %% Solving the 1D Momentum Transfer
 %%%%%!!!!!---------------------------------------!!!!!%%%%%
-for n = 1:1
-    % Calculating the divergence of the momentum prediction
-    rhouP = rhou;
-    divPred_x = divMom1D(rhouP, Delta);
-
+for n = 1:200
     % Calculating the resulting pressure by solving the Poisson Equation
     P = poissonSolver1D(DeltaT, Delta, divPred_x, P);
 

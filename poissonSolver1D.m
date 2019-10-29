@@ -44,7 +44,7 @@ function P = poissonSolver1D(deltaT, Delta, divPred, P)
         P(Ifim) = P(Ifi);
 
         % Fix pressure to 0 at the outlet
-        P(Ilap) = 0;
+        P(Ilap) = -P(Ila);
         
         % Error 
         e = max(abs(P(Ifi:Ila) - P_old(Ifi:Ila)));
